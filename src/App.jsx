@@ -5,6 +5,8 @@ import { BrowserRouter as Router,
 import './App.css';
 import HomePage from './pages/HomePage'
 import SignupPage from './pages/SignupPage'
+import LoginPage from './pages/LoginPage'
+// import ProfilePage from './pages/Profile/ProfilePage'
 
 function App() {
   return (
@@ -14,6 +16,12 @@ function App() {
           <Route path="/registro">
             <SignupPage />
           </Route>
+          <Route path="/login">
+            <LoginPage />
+          </Route>
+          {/* <Route path="/profile/new">
+            <ProfilePage />
+          </Route> */}
           <Route path="/">
             <HomePage />
           </Route>
