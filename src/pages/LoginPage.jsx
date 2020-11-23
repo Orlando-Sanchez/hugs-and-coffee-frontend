@@ -1,13 +1,23 @@
-import React from 'react'
-import axios from 'axios';
+import React, { useEffect } from 'react'
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux'
 import { TextInput } from './../components/TextInput';
 import UserHeader from '../components/headers/UserHeader';
 import '../../src/styles/idk.css';
+import { logUserIn, fetchProfile } from '../actions/userActions';
 
 const LoginPage = () => {
+
+  const dispatch = useDispatch()
+  const token = useSelector(state => state.userReducer.token)
+  const profile = useSelector(state => state.userReducer.profile)
+
+  useEffect(() => {
+    if (token !== '') dispatch(fetchProfile(token))
+  }, [dispatch, token])
+
   return (
     <div>
       <UserHeader />
@@ -34,31 +44,19 @@ const LoginPage = () => {
             onSubmit={(data, { setSubmitting }) => {
               // setSubmitting(true) para deshabilitar el spameo del button submit
               setSubmitting(true);
-              console.log('submit: ', data);
               // make async call
-              axios.post('http://localhost:3001/user_token', {
-                auth: {
-                  'email': data.email,
-                  'password': data.password,
-                }
-              }).then(response => {
-                console.log('Returned data:', response)
-                setSubmitting(false);
-                axios.get('http://localhost:3001/profile/data', {
-                  headers: {
-                    'Authorization': "Bearer " + response.data.jwt
-                  }
-               }).then(response => {
-                 console.log('Profile data:', response)
-               }).catch(response => {
-                console.log('respuesta en error', response)
-               })
-              }).catch(response => {
-                console.log('respuesta en error', response)
-                setSubmitting(false);
-              });
-              // despues de que termine el async call
-              console.log('antes del sebSubmitting set false');
+              dispatch(logUserIn(data))
+              // .then(response => {
+              //   console.log('Returned data:', response)
+              //   console.log("profile data: ", profileData)
+              // })
+              // .catch(response => {
+              //   console.log('respuesta en error', response)
+
+              // })
+              // .finally(setSubmitting(false));
+              // // despues de que termine el async call
+              // console.log('antes del sebSubmitting set false');
             }}
           >
             {({ isSubmitting }) => (
