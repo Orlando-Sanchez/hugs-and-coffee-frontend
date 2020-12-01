@@ -1,9 +1,12 @@
-// import React from 'react'
-// import axios from 'axios'
-// import { Formik, Form } from 'formik'
-// import * as Yup from 'yup'
-// import { TextInput } from './../components/TextInput'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-// const ProfilePage = () => {
-//   return ()
-// }
+const ProfilePage = () => {
+  return (
+    <div>
+      <h1>Profile</h1>
+    </div>
+  )
+}
+
+export default ProfilePage

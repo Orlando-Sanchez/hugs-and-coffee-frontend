@@ -1,4 +1,6 @@
 import axios from 'axios'
+import Cookies from 'js-cookie'
+
 // Action Creators
 
 const setToken = (payload) => ({type: "SET_TOKEN", payload})
@@ -17,19 +19,23 @@ export const logUserIn = (data) => (dispatch) => {
   })
   .then(response => {
     console.log('login response:', response)
+    Cookies.set('token', response.data.jwt, { expires: 7 })
     dispatch(setToken(response.data.jwt))
   })
 }
 
 export const fetchProfile = (token) => (dispatch) => {
-  console.log('token:', token)
+  // console.log('token:', token)
   axios.get('http://localhost:3001/profile/data', {
     headers: {
       'Authorization': "Bearer " + token
     }
   })
   .then(response => {
-    console.log('profile response:', response)
     dispatch(setProfile(response.data.profile))
+  }).catch(err => {
+    dispatch(setToken(null))
+    Cookies.remove('token')
+    console.log(err)
   })
 }

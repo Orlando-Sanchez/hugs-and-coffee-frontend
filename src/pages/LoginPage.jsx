@@ -1,27 +1,21 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import '../../src/styles/idk.css';
+import { logUserIn } from '../actions/userActions';
 import { TextInput } from './../components/TextInput';
 import UserHeader from '../components/headers/UserHeader';
-import '../../src/styles/idk.css';
-import { logUserIn, fetchProfile } from '../actions/userActions';
 
 const LoginPage = () => {
 
   const dispatch = useDispatch()
-  const token = useSelector(state => state.userReducer.token)
-  const profile = useSelector(state => state.userReducer.profile)
-
-  useEffect(() => {
-    if (token !== '') dispatch(fetchProfile(token))
-  }, [dispatch, token])
 
   return (
     <div>
       <UserHeader />
-      <div className="signup-main white">
+      <main>
         <div className="form__title">
           <Link to="/" className="home-link left-align"><h6>Ir Atrás</h6></Link>
           <h5 className="center-align">Login</h5>
@@ -85,7 +79,7 @@ const LoginPage = () => {
             )}
           </Formik>
         </div>
-      </div>
+      </main>
     </div>
   )
 }

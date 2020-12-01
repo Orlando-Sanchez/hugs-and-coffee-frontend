@@ -1,6 +1,8 @@
+import Cookies from 'js-cookie'
+
 const defaultState = {
   loggedIn: false,
-  token: '',
+  token: Cookies.get('token') || null,
   profile: {
     fullname: '',
     occupation: '',
@@ -8,7 +10,7 @@ const defaultState = {
     coffee_price: '',
     currency_sign: '',
     is_published: '',
-    id: ''
+    id: null
   }
 }
 

@@ -14,7 +14,7 @@ const SignupPage = () => {
   return (
     <div>
       <UserHeader />
-      <div className="signup-main white">
+      <main>
         <div className="form__title">
           <Link to="/" className="home-link left-align"><h6>Ir Atrás</h6></Link>
           <h5 className="center-align">Registro de Usuario</h5>
@@ -94,7 +94,7 @@ const SignupPage = () => {
             )}
           </Formik>
         </div>
-      </div>
+      </main>
     </div>
   )
 }

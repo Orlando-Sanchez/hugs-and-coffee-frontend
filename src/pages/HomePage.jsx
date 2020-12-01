@@ -1,13 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import '../../src/styles/home.css';
+import UserHeader from '../components/headers/UserHeader';
+import { ReactComponent as Coffees } from '../images/coffees.svg';
 
 const HomePage = () => {
   return (
-    <Link to="/registro">
+    <div>  
       <div>
-        <h1>Registro</h1>
+        <UserHeader />
+        <div className="intro">
+          <Coffees className="coffees"/>
+          <p>Un café es un abrazo atrapado en una taza</p>
+        </div>
       </div>
-    </Link>
+      <div></div>
+    </div>
   )
 }
 
