@@ -12,7 +12,7 @@ const SignupPage = () => {
   const history = useHistory()
 
   return (
-    <div>
+    <div className="main-wrapper">
       <UserHeader />
       <main>
         <div className="form__title">

@@ -25,13 +25,13 @@ export const logUserIn = (data) => (dispatch) => {
 }
 
 export const fetchProfile = (token) => (dispatch) => {
-  // console.log('token:', token)
   axios.get('http://localhost:3001/profile/data', {
     headers: {
       'Authorization': "Bearer " + token
     }
   })
   .then(response => {
+    console.log(response)
     dispatch(setProfile(response.data.profile))
   }).catch(err => {
     dispatch(setToken(null))

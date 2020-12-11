@@ -9,7 +9,6 @@ import { TextInput } from './../components/TextInput';
 import UserHeader from '../components/headers/UserHeader';
 
 const LoginPage = () => {
-
   const dispatch = useDispatch()
 
   return (

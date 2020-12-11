@@ -1,12 +1,163 @@
+.main {
+  height: 100vh;
+}
+
 .intro {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
-  height: 561px;
+  margin-top: 8%;
 }
 
 .coffees {
-  Width: 161px;
-  Height: 193,5px;
+  margin-top: 1%;
+  margin-bottom: 10%;
+}
+
+.home__title {
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  margin-bottom: 8%;
+  width: 70%;
+}
+
+.home__desc {
+  font-size: 16px;
+  line-height: 130%;
+  text-align: center;
+  margin-bottom: 10%;
+}
+
+.desc-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+
+.desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10%;
+  height: 100vh;
+}
+
+.desc__title {
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  margin-bottom: 8%;
+  width: 90%;
+}
+
+.desc__text {
+  font-size: 16px;
+  line-height: 130%;
+  text-align: center;
+  margin-bottom: 10%;
+  width: 85%
+}
+
+.cellphones {
+  width: 240px;
+  height: 285.1px
+}
+
+@media screen and (min-width: 768px) {
+
+  .intro {
+    margin-top: 0;
+  }
+  
+  .coffees {
+    width: 37%;
+    height: 33.53%;
+    margin-bottom: 2%;
+  }
+
+  .home__title {
+    width: 64.94%;
+    height: 6.77%;
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 2%;
+  }
+
+  .home__desc {
+    font-size: 24px;
+    width: 79.48%;
+    height: 2.29%;
+    margin-bottom: 2%;
+    line-height: 130%;
+  }
+
+  .desc__title {
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 4.68%;
+    width: 80%;
+  }
+
+  .desc__text {
+    font-size: 24px;
+    line-height: 130%;
+    width: 75%;
+    margin-bottom: 5.41%
+  }
+
+  .cellphones {
+    width: 57.06%;
+    height: 48.63%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+
+  .coffees {
+    width: 20%;
+    height: 30%;
+  }
+
+  .home__title {
+    width: 42%;
+    height: 8.64%;
+    font-size: 35px;
+    line-height: 43.38px;
+    margin-bottom: 1%;
+  }
+
+  .home__desc {
+    width: 41.18%;
+    height: 5.52%;
+  }
+  
+  .button {
+    width: 224px;
+    height: 40px;
+    padding-top: 2px;
+  }
+
+  .desc {
+    margin-top: 3%;
+  }
+
+  .desc__title {
+    font-size: 36px;
+    line-height: 43px;
+    width: 45.55%;
+    margin-bottom: 2.90%;
+  }
+
+  .desc__text {
+    width: 41.18%;
+    margin-bottom: 3.70%;
+  }
+
+  .cellphones {
+    width: 31.94%;
+    height: 53.36%;
+  }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ManageProfilePage = () => {
+const EditProfilePage = () => {
   return (
     <div>
       <h1>Edit Profile</h1>
@@ -9,4 +9,4 @@ const ManageProfilePage = () => {
   )
 }
 
-export default ManageProfilePage
+export default EditProfilePage
